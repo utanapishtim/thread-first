@@ -3,11 +3,15 @@ var assert = require('assert')
 
 var str = 'abcdefg'
 
+function head (array) {
+  return Array.isArray(array) && array[0]
+}
+
 var X = threadfst(str, [
   ['replace', 'a', 'x'],
   'toUpperCase',
   ['split', ''],
-  (a) => a[0]
+  head
 ])
 
 assert(X === 'X', 'test 1, result does not equal \'X\'')
