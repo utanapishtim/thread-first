@@ -1,0 +1,30 @@
+{
+  "name": "thread-first",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "clean": "rimraf build",
+    "build:compile": "babel --presets=es2015 index.js --out-file build/index.js",
+    "build": "npm run clean && mkdir build && npm run build:compile",
+    "test": "npm run lint && node tests/index.js",
+    "lint": "standard ./index.js tests/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utanapishtim/thread-first.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/utanapishtim/thread-first/issues"
+  },
+  "homepage": "https://github.com/utanapishtim/thread-first#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "rimraf": "^2.6.1",
+    "standard": "^9.0.2"
+  }
+}
