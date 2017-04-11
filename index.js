@@ -7,7 +7,7 @@ function handleForms (x, form) {
   if (isFunction(form)) return form(x)
   if (isArray(form)) return x[form[0]].apply(x, form.slice(1))
   if (x !== undefined) {
-    if (x[form] !== undefined) return (isFunction(x[form])) ? x[form]() : x[form]
+    return (isFunction(x[form])) ? x[form]() : x[form]
   }
   return x
 }

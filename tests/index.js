@@ -46,3 +46,23 @@ var res = threadfst(addThree, [
 ])
 
 assert(res === 6)
+
+var obj2 = {
+  x: {
+    y: {
+      z: {
+        foo: {
+          bar: {
+            baz: true
+          }
+        }
+      }
+    }
+  }
+}
+
+var result = threadfst(obj2, [
+  'x', 'y', 'z', 'bar', 'baz'
+])
+
+assert(result === undefined)
